@@ -1,5 +1,5 @@
 {% set name = "pyNSID" %}
-{% set version = "0.0.6" %}
+{% set version = "0.0.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fe1a72e1487fb1508d69beb7e421ead977154a18f21ecaf5f950a41196adee41
+  sha256: 37beeb6c0f57d2a0f5867849bd5f05bfba67c7c2589ab9579d7b222def456fe8
 
 build:
   noarch: python
