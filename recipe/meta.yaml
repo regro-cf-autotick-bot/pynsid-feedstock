@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 37beeb6c0f57d2a0f5867849bd5f05bfba67c7c2589ab9579d7b222def456fe8
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
     - pytest-runner
   run:
-    - python >=3
+    - python >={{ python_min }}
     - cytoolz
     - dask-core >=0.10
     - h5py >=2.6.0
@@ -30,6 +30,8 @@ requirements:
     - toolz
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pyNSID
     
